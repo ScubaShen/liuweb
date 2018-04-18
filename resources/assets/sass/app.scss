@@ -1,9 +1,46 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
-@import "variables";
-
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* footer */
+
+footer {
+  border-top: 1px solid #eaeaea;
+  margin-top: 45px;
+  padding-top: 7px;
+
+  a {
+    color: #646c70;
+  }
+
+  a:hover {
+    color: #222;
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+  }
+}
+
+.brand-icon {
+  height: 17px;
+  width: 17px;
+}
+
+.slogon {
+  font-size: 14px;
+  color: #646c70;
+}
+
+/* home */
+.jumbotron {
+  min-height: 456px;
+
+  #signup {
+    margin-top: 15px;
+  }
+}

@@ -5,9 +5,9 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable  //授权相关功能
 {
-    use Notifiable;
+    use Notifiable;  //消息通知
 
     /**
      * The attributes that are mass assignable.

@@ -13,13 +13,13 @@
   <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon" />
 
   @section('css')
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
   @show
 
 </head>

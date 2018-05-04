@@ -36,21 +36,90 @@
 
     };
 
+    var contentWayPoint = function() {
+        var i = 0;
+
+        // $('.gtco-section').waypoint( function( direction ) {
+
+
+        $('.animate-box').waypoint( function( direction ) {
+
+            if( direction === 'down' && !$(this.element).hasClass('animated-fast') ) {  //上下滾動
+
+                i++;
+
+                $(this.element).addClass('item-animate');
+                setTimeout(function(){
+
+                    $('body .animate-box.item-animate').each(function(k){
+                        var el = $(this);
+                        setTimeout( function () {
+                            var effect = el.data('animate-effect');
+                            if ( effect === 'fadeIn') {
+                                el.addClass('fadeIn animated-fast');
+                            } else if ( effect === 'fadeInLeft') {
+                                el.addClass('fadeInLeft animated-fast');
+                            } else if ( effect === 'fadeInRight') {
+                                el.addClass('fadeInRight animated-fast');
+                            } else {
+                                el.addClass('fadeInUp animated-fast');
+                            }
+
+                            el.removeClass('item-animate');
+                        },  k * 200, 'easeInOutExpo' );
+                    });
+
+                }, 100);
+
+            }
+
+        } , { offset: '85%' } );
+        // }, { offset: '90%'} );
+    };
+
     var owlCarousel = function(){
 
-        var owl = $('.owl-carousel-fullwidth');
+        var owl = $('.owl-carousel-carousel');
         owl.owlCarousel({
             items: 5,
             loop: true,
-            margin: 20,
+            margin: 0,
             nav: true,
             dots: false,
             smartSpeed: 800,
-            autoHeight: true,
+            autoHeight: false,
             navText: [
                 "<i class='ti-angle-left owl-direction'></i>",
                 "<i class='ti-angle-right owl-direction'></i>"
-            ]
+            ],
+            responsive:{
+                0:{
+                    items:1,
+                    dots: true,
+                    nav: false
+                },
+                600:{
+                    items:2
+                },
+                820:{
+                    items:3
+                },
+                1080:{
+                    items:4
+                },
+                1680:{
+                    items:5
+                }
+            }
+        });
+    };
+
+    var playPauseVedio = function () {
+
+        $('.liu-video-button').on('click', function(){
+            var video=$('#liu-video-main')[0];
+            video.paused && video.play()||video.pause();
+
         });
 
     };
@@ -58,6 +127,8 @@
     $(function(){
         headcarousel();
         goToTop();
+        contentWayPoint();
         owlCarousel();
+        playPauseVedio();
     });
 }());

@@ -68,9 +68,13 @@
 
 /* home */
 
-#liu-feature, #liu-solution {
+#liu-feature, #liu-solution, #liu-process {
   border-bottom: 1px solid #e6e6e6;
   padding: 7em 0;
+
+  .row {
+    margin: 0;
+  }
 }
 
 .liu-heading {
@@ -90,6 +94,10 @@
     line-height: 1.5;
     color: gray;
   }
+}
+
+.animate-box {
+  opacity: 0;
 }
 
 #liu-header {
@@ -113,7 +121,7 @@
 }
 
 #liu-feature {
-  .feature-center {
+  .liu-center {
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
@@ -211,6 +219,92 @@
 
 /* Owl Override Style */
 
+.carousel-background {
+  background-color: #373d41;
+}
+
+.liu-item-background img{
+  opacity: 0.6;
+}
+
+.liu-collapse {
+  display: none;
+}
+
+#liu-solution {
+  //.row {
+  //  margin: 0;
+  //
+  //  .carousel-background-padding {
+  //    padding: 0 50px;
+  //  }
+  //}
+  .carousel-background-padding {
+    padding: 0 50px;
+  }
+
+  .liu-item {
+    top:23%;
+    position: absolute;
+    z-index: 999;
+    color: white;
+    width: 100%;
+    text-align: center;
+    -webkit-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    img {
+      height: 72px;
+      width: 72px;
+      display: inline-block;
+    }
+
+    .liu-item-line {
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+    .liu-item-title {
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    .liu-collapse p{
+      padding: 0 23px;
+    }
+  }
+
+  .item :hover, .item :focus {
+
+    .liu-item-background {
+      background-color: rgba(0, 193, 222, 0.7);
+
+      img {
+        opacity: 0.2 !important;
+      }
+    }
+
+    .liu-item {
+      margin-top: -40px !important;
+    }
+
+    .liu-collapse {
+      display: block;
+    }
+
+    .liu-collapse-inverse {
+      display: none;
+    }
+  }
+}
+
+.owl-height {
+  height: auto !important;
+}
+
 .owl-carousel .owl-controls,
 .owl-carousel-posts .owl-controls {
   margin-top: 0 !important;
@@ -220,7 +314,7 @@
 .owl-carousel .owl-controls .owl-nav .owl-prev,
 .owl-carousel-posts .owl-controls .owl-nav .owl-next,
 .owl-carousel-posts .owl-controls .owl-nav .owl-prev {
-  top: 40%;
+  top: 54%;
   margin-top: -39px;
   z-index: 9999;
   position: absolute;
@@ -229,28 +323,25 @@
   transition: 0.2s;
 }
 
-.owl-carousel-posts .owl-controls .owl-nav .owl-next,
-.owl-carousel-posts .owl-controls .owl-nav .owl-prev {
-  top: 24%;
-}
-
 .owl-carousel .owl-controls .owl-nav .owl-next,
 .owl-carousel-posts .owl-controls .owl-nav .owl-next {
-  right: 20px;
+  right: -7px;
+  padding: 0 !important;
 }
-.owl-carousel .owl-controls .owl-nav .owl-next:hover,
-.owl-carousel-posts .owl-controls .owl-nav .owl-next:hover {
-  margin-right: -10px;
-}
+//.owl-carousel .owl-controls .owl-nav .owl-next:hover,
+//.owl-carousel-posts .owl-controls .owl-nav .owl-next:hover {
+//  margin-right: -10px;
+//}
 
 .owl-carousel .owl-controls .owl-nav .owl-prev,
 .owl-carousel-posts .owl-controls .owl-nav .owl-prev {
-  left: 20px;
+  left: -7px;
+  padding: 0 !important;
 }
-.owl-carousel .owl-controls .owl-nav .owl-prev:hover,
-.owl-carousel-posts .owl-controls .owl-nav .owl-prev:hover {
-  margin-left: -10px;
-}
+//.owl-carousel .owl-controls .owl-nav .owl-prev:hover,
+//.owl-carousel-posts .owl-controls .owl-nav .owl-prev:hover {
+//  margin-left: -10px;
+//}
 
 .owl-carousel-posts .owl-controls .owl-nav .owl-next i,
 .owl-carousel-posts .owl-controls .owl-nav .owl-prev i,
@@ -274,25 +365,21 @@
   color: #fff;
 }
 
-@media screen and (max-width: 768px) {
-  .owl-theme .owl-controls .owl-nav {
-    display: none;
-  }
-}
-
 .owl-theme .owl-controls .owl-nav [class*="owl-"] {
   background: none !important;
 }
+
 .owl-theme .owl-controls .owl-nav [class*="owl-"] i {
   font-size: 24px;
-  background: #f54c53 !important;
-  padding: 12px;
+  background: transparent !important;
+  padding: 12px 0;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+
 .owl-theme .owl-controls .owl-nav [class*="owl-"]:hover i, .owl-theme .owl-controls .owl-nav [class*="owl-"]:focus i {
-  background: #f54c53 !important;
+  background: transparent !important;
 }
 
 .owl-theme .owl-dots {
@@ -310,7 +397,6 @@
 .owl-theme .owl-dots .owl-dot span {
   width: 10px;
   height: 10px;
-  background: #f54c53;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;

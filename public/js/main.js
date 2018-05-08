@@ -114,21 +114,21 @@
         });
     };
 
-    var playPauseVedio = function () {
-
-        $('.liu-video-button').on('click', function(){
-            var video=$('#liu-video-main')[0];
-            video.paused && video.play()||video.pause();
-
-        });
-
-    };
+    //var playPauseVedio = function () {
+    //
+    //    $('.liu-video-button').on('click', function(){
+    //        var video=$('#liu-video-main')[0];
+    //        video.paused && video.play()||video.pause();
+    //
+    //    });
+    //
+    //};
 
     $(function(){
         headcarousel();
         goToTop();
         contentWayPoint();
         owlCarousel();
-        playPauseVedio();
+        //playPauseVedio();
     });
 }());

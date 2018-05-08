@@ -9,13 +9,13 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <ul class="nav navbar-nav navbar-right offcanvasMenu-dis">
+    <ul class="nav navbar-nav navbar-right offcanvasMenu-dis liu-underline">
       <li><a href="{{ route('help') }}">帮助</a></li>
       <li><a href="#">登录</a></li>
     </ul>
   </div>
   <div class="container-fluid offcanvasMenu-dis">
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav liu-underline">
       <li><a href="#">最新活动</a></li>
       <li><a href="javascript:void(0)">产品</a></li>
       <li><a href="#">解决方案</a></li>
@@ -28,7 +28,7 @@
       <li><a href="#">合作伙伴</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><button class="btn btn-primary">开始注册</button></li>
+      <li><a href="{{ route('signup') }}" id="signup" class="btn btn-primary">开始注册</a></li>
     </ul>
   </div>
   {{--menu--}}

@@ -24,7 +24,8 @@
 
 </head>
 <body>
-  @include('layouts._header')
+  @include('layouts._header', ['header' => $header])
+  @include('shared._messages')
   @yield('content')
   @include('layouts._footer')
 

@@ -3,16 +3,25 @@
 
 /* header */
 
-.navbar {
-  position: absolute;
-  z-index: 999;
-  width: 100%;
+.background-transparent {
   background: transparent;
-  border: 0;
-  margin-bottom: 0;
+  position: absolute;
   -webkit-transition: background 300ms cubic-bezier(0, 0, 0.2, 1) 150ms;
   -o-transition: background 300ms cubic-bezier(0, 0, 0.2, 1) 150ms;
   transition: background 300ms cubic-bezier(0, 0, 0.2, 1) 150ms;
+}
+
+.background-opaque {
+  background: #373d41 !important;
+}
+
+.navbar {
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
 
   .container-fluid {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -55,19 +64,19 @@
     }
   }
 
-  .navbar:hover {
-    background-color: #373d41 !important;
-  }
-
-  .liu-underline .nav > li > a:hover, .liu-underline .nav > li > a:focus {
-    background: none !important;
-    padding-bottom: 12px;
-    border-bottom: 3px solid #ddd;
-  }
-
   .liu-collapse {
     display: none;
   }
+}
+
+.background-transparent:hover {
+  background-color: #373d41 !important;
+}
+
+.liu-underline > li > a:hover, .liu-underline > li > a:focus {
+  background: none !important;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #ddd;
 }
 
 /* home */
@@ -531,7 +540,14 @@
   }
 }
 
-/* footer */
+.user_info {
+  text-align: center;
+}
+
+.message-container {
+  position:relative;
+  top:100px
+}
 
 @media (max-width: 940px) {
   /* header */
@@ -632,20 +648,12 @@
   right: -7px;
   padding: 0 !important;
 }
-//.owl-carousel .owl-controls .owl-nav .owl-next:hover,
-//.owl-carousel-posts .owl-controls .owl-nav .owl-next:hover {
-//  margin-right: -10px;
-//}
 
 .owl-carousel .owl-controls .owl-nav .owl-prev,
 .owl-carousel-posts .owl-controls .owl-nav .owl-prev {
   left: -7px;
   padding: 0 !important;
 }
-//.owl-carousel .owl-controls .owl-nav .owl-prev:hover,
-//.owl-carousel-posts .owl-controls .owl-nav .owl-prev:hover {
-//  margin-left: -10px;
-//}
 
 .owl-carousel-posts .owl-controls .owl-nav .owl-next i,
 .owl-carousel-posts .owl-controls .owl-nav .owl-prev i,

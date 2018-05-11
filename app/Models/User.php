@@ -26,4 +26,10 @@ class User extends Authenticatable  //用users表
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function gravatar($size = '100')
+    {
+        $hash = md5(strtolower(trim($this->attributes['email'])));  //attributes['email'] 就是獲取郵箱
+        return "http://www.gravatar.com/avatar/$hash?s=$size";
+    }
 }

@@ -20,7 +20,9 @@
       </div>
     </div>
   </div>
-  <h1>帮助页</h1>
+  <div class="padding-content">
+    <h1>帮助页</h1>
+  </div>
 @stop
 
 @section('js')

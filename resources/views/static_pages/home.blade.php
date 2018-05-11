@@ -45,7 +45,7 @@
   </div>
 
 
-  <div id="liu-feature" class="border-bottom">
+  <div id="liu-feature" class="border-bottom padding-content">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center liu-heading">
@@ -131,7 +131,7 @@
   </div>
 
 
-  <div id="liu-solution">
+  <div id="liu-solution" class="border-bottom padding-content">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center liu-heading">
@@ -249,7 +249,7 @@
   </div>
 
 
-  <div id="liu-process">
+  <div id="liu-process" class="border-bottom padding-content">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center liu-heading">

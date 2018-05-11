@@ -1,4 +1,4 @@
-<footer id="footer" role="contentinfo" style="background: #373d41;color: white;padding: 7em 0;">
+<footer id="footer" class="padding-content" role="contentinfo" style="background: #373d41;color: white;">
   <div class="container">
     <div class="row row-p	b-md">
 

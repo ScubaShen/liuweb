@@ -1,6 +1,18 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+html {
+  background-color: #373d41;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.padding-content {
+  padding: 7em 0;
+}
+
 /* header */
 
 .background-transparent {
@@ -15,6 +27,12 @@
   background: #373d41 !important;
 }
 
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: transparent;
+  color: #8dc5f4 !important;
+}
+
 .navbar {
   top: 0;
   z-index: 999;
@@ -22,6 +40,7 @@
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
+  min-height: 40px;
 
   .container-fluid {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -79,12 +98,9 @@
   border-bottom: 3px solid #ddd;
 }
 
-/* home */
+/* content */
 
 #liu-feature, #liu-solution, #liu-process {
-  border-bottom: 1px solid #e6e6e6;
-  padding: 7em 0;
-
   .row {
     margin: 0;
   }

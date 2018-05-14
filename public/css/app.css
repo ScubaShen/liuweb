@@ -8447,6 +8447,10 @@ html {
   border-bottom: 3px solid #ddd;
 }
 
+#logout {
+  padding-top: 1px;
+}
+
 /* content */
 
 #liu-feature .row,

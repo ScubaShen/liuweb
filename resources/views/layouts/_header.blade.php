@@ -100,7 +100,7 @@
               <li><a href="{{ route('users.edit', Auth::user()->id) }}">编辑资料</a></li>
               <li class="divider"></li>
               <li>
-                <a id="logout" href="#" style="padding-top: 1px;">
+                <a id="logout" href="#">
                   <form action="{{ route('logout') }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}

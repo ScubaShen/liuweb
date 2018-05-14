@@ -8901,9 +8901,42 @@ html {
   text-align: center;
 }
 
-.message-container {
-  position: relative;
-  top: 100px;
+.user_info h1 {
+  font-size: 1.4em;
+  letter-spacing: -1px;
+  margin-bottom: 3px;
+  margin-top: 15px;
+}
+
+.gravatar {
+  max-width: 50px;
+  border-radius: 50%;
+}
+
+.gravatar_edit {
+  margin: 15px auto;
+  text-align: center;
+}
+
+.gravatar_edit .gravatar {
+  max-width: 100px;
+  border-radius: 50%;
+}
+
+.users {
+  padding-left: 0;
+  list-style: none;
+}
+
+.users li {
+  overflow: auto;
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.users li img {
+  float: left;
+  margin-right: 10px;
 }
 
 @media (max-width: 940px) {

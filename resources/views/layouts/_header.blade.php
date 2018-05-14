@@ -12,7 +12,7 @@
       </div>
       <ul class="nav navbar-nav navbar-right offcanvasMenu-dis liu-underline">
         @if(Auth::check())
-          <li><a href="#">用户列表</a></li>
+          <li><a href="{{ route('users.index') }}">用户列表</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               {{ Auth::user()->name }} <b class="caret"></b>
@@ -51,9 +51,11 @@
         <li><a href="#">支持与服务</a></li>
         <li><a href="#">合作伙伴</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ route('signup') }}" id="signup" class="btn btn-primary">开始注册</a></li>
-      </ul>
+      @if(!Auth::check())
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ route('signup') }}" id="signup" class="btn btn-primary">开始注册</a></li>
+        </ul>
+      @endif
     </div>
     {{--menu--}}
     <div id="offcanvas" class="collapse offcanvasMenu-shown"><ul>
@@ -88,14 +90,14 @@
       </div>
       <ul class="nav navbar-nav navbar-right offcanvasMenu-dis liu-underline">
         @if(Auth::check())
-          <li><a href="#">用户列表</a></li>
+          <li><a href="{{ route('users.index') }}">用户列表</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background: transparent;">
               {{ Auth::user()->name }} <b class="caret"></b>
             </a>
             <ul class="dropdown-menu" style="background: #373d41;">
               <li><a href="{{ route('users.show', Auth::user()->id) }}">个人中心</a></li>
-              <li><a href="#">编辑资料</a></li>
+              <li><a href="{{ route('users.edit', Auth::user()->id) }}">编辑资料</a></li>
               <li class="divider"></li>
               <li>
                 <a id="logout" href="#" style="padding-top: 1px;">
@@ -127,9 +129,11 @@
         <li><a href="#">支持与服务</a></li>
         <li><a href="#">合作伙伴</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ route('signup') }}" id="signup" class="btn btn-primary">开始注册</a></li>
-      </ul>
+      @if(!Auth::check())
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ route('signup') }}" id="signup" class="btn btn-primary">开始注册</a></li>
+        </ul>
+      @endif
     </div>
     {{--menu--}}
     <div id="offcanvas" class="collapse offcanvasMenu-shown"><ul>

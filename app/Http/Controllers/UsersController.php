@@ -13,7 +13,7 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-           'except' => ['show', 'create', 'store', 'index', 'confirmEmail']  //只有這些不會用到 Auth 權限(遊客才能使用)
+           'except' => ['create', 'store', 'index', 'confirmEmail']  //只有這些不會用到 Auth 權限(遊客才能使用)
         ]);
 
         $this->middleware('guest', [  //防止已登入去操作未登入的頁面
@@ -23,7 +23,7 @@ class UsersController extends Controller
 
     public function index(){
         $users = User::paginate(10);
-        return view('users.index', compact('users'))->with('header', 'opaque');
+        return view('users.index', compact('users'))->with('header', 'backstage');
     }
 
     public function create()  //創建帳號介面
@@ -33,7 +33,10 @@ class UsersController extends Controller
 
     public function show(User $user)  //顯示用戶個人資料頁面
     {
-        return view('users.show', compact('user'))->with('header', 'opaque');  //user就等於$user
+        $statuses = $user->statuses()
+                            ->orderBy('created_at', 'desc')
+                            ->paginate(30);
+        return view('users.show', compact('user', 'statuses'))->with('header', 'backstage');  //user就等於$user
     }
 
     public function store(Request $request)
@@ -62,7 +65,7 @@ class UsersController extends Controller
     public function edit(User $user)
     {
         $this->authorize('update', $user);  //當你去操作別人id時會拋出錯誤，在UserPolicy.php裡
-        return view('users.edit', compact('user'))->with('header', 'opaque');
+        return view('users.edit', compact('user'))->with('header', 'backstage');
     }
 
     public function update(User $user, Request $request)

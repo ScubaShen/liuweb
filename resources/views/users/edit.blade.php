@@ -2,9 +2,10 @@
 @section('title', '登录')
 
 @section('content')
+  <div class="col-md-offset-3 col-md-6">
   <div class="padding-content">
-    <div class="container">
-      <div class="col-md-offset-3 col-md-6">
+
+
         <div class="panel panel-default">
           <div class="panel-heading">
             <h5>更新个人资料</h5>
@@ -48,6 +49,6 @@
           </div>
         </div>
       </div>
-    </div>
+
   </div>
 @stop

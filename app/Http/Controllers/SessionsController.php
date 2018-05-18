@@ -29,7 +29,7 @@ class SessionsController extends Controller
 
         if(Auth::attempt($credentials, $request->has('remember'))){
             if(Auth::user()->activated) {
-                session()->flash('success', '欢迎回来！');
+                //session()->flash('success', '欢迎回来！');
                 return redirect()->intended(route('users.show', [Auth::user()]));  //intended:跳轉到未登入前嘗試輸入的地址，例如未登入時訪問: /users/1/edit，登入後直接跳轉這頁面
             } else {
                 Auth::logout();

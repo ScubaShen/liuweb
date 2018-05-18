@@ -114,6 +114,48 @@
         });
     };
 
+    var sidebar = function(){
+
+        $('.sidebar-btn').on('click', function(){
+
+            if($(this).hasClass('sidebar-fold')){
+
+                $(this).removeClass('sidebar-fold').addClass('sidebar-unfold');
+                $(this).children().removeClass('ti-split-v-alt').addClass('ti-split-h');
+                $('.panel-right').css('left','50px');
+                $('.sidebar').css('width','50px');
+            }
+            else if($(this).hasClass('sidebar-unfold')){
+
+                $(this).removeClass('sidebar-unfold').addClass('sidebar-fold');
+                $(this).children().removeClass('ti-split-h').addClass('ti-split-v-alt');
+                $('.panel-right').css('left','180px');
+                $('.sidebar').css('width','180px');
+            }
+        });
+    };
+
+    var innerSidebar = function(){
+
+        $('.product-navbar-collapse-inner').on('click', function(){
+
+            if($(this).hasClass('inner-sidebar-fold')){
+
+                $(this).removeClass('inner-sidebar-fold').addClass('inner-sidebar-unfold').css({'transform':'rotate(180deg)','left':'0'});
+                $('.product-navbar-collapse-bg').css('border-right', '13px solid #D9DEE4').removeClass('product-navbar-collapse-bg-left').addClass('product-navbar-collapse-bg-right');
+                $('.inner-sidebar').css('width', '0');
+                $('.inner-right').css('left', '0');
+            }
+            else if($(this).hasClass('inner-sidebar-unfold')){
+
+                $(this).removeClass('inner-sidebar-unfold').addClass('inner-sidebar-fold').css({'transform':'rotate(0deg)','left':'160px'});
+                $('.product-navbar-collapse-bg').css('border-right', '13px solid #ffffff').removeClass('product-navbar-collapse-bg-right').addClass('product-navbar-collapse-bg-left');
+                $('.inner-sidebar').css('width', '180px');
+                $('.inner-right').css('left', '180px');
+            }
+        })
+    };
+
     //var playPauseVedio = function () {
     //
     //    $('.liu-video-button').on('click', function(){
@@ -130,5 +172,7 @@
         contentWayPoint();
         owlCarousel();
         //playPauseVedio();
+        sidebar();
+        innerSidebar();
     });
 }());

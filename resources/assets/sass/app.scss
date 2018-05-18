@@ -15,6 +15,19 @@ html {
 
 /* header */
 
+.navbar {
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+
+  a {
+    color: white !important;
+  }
+}
+
 .background-transparent {
   background: transparent;
   position: absolute;
@@ -27,27 +40,21 @@ html {
   background: #373d41 !important;
 }
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  background-color: transparent;
-  color: #8dc5f4 !important;
+.background-backstage {
+  position: absolute;
+  height: 50px;
+  background: #373d41 !important;
+  left: 0;
 }
 
-.navbar {
-  top: 0;
-  z-index: 999;
-  width: 100%;
-  border: 0;
-  border-radius: 0;
-  margin-bottom: 0;
+.background-opaque, .background-transparent {
   min-height: 40px;
 
   .container-fluid {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  a{
-    color: white !important;
+  a {
     -webkit-transition: 100ms cubic-bezier(0.4, 0, 0.2, 1);
     -o-transition: 100ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: 100ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -98,8 +105,47 @@ html {
   border-bottom: 3px solid #ddd;
 }
 
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent ;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: transparent ;
+  color: #8dc5f4 !important;
+}
+
 #logout {
   padding-top: 1px;
+}
+
+.product-navbar-collapse-inner:hover,
+.product-navbar-collapse-inner:focus {
+  .product-navbar-collapse-bg-left {
+    border-right: 20px solid #f7f7f7 !important;
+  }
+
+  .product-navbar-collapse-bg-right {
+    border-right: 20px solid #D9DEE4 !important;
+  }
+
+  .product-navbar-collapse {
+    right: -6px !important;
+  }
+}
+
+.small-font{
+  font-size:12px;
+  -webkit-transform: scale(0.80);
+  -moz-transform: scale(0.80);
+  -ms-transform: scale(0.80);
+  -o-transform: scale(0.80);
+  transform: scale(0.80);
+}
+
+
+.smallsize-font {
+  font-size: 9.6px;
 }
 
 /* content */
@@ -569,9 +615,15 @@ html {
     margin-bottom: 3px;
     margin-top: 15px;
   }
+
+  .gravatar {
+    max-width: 70px;
+    float: none;
+  }
 }
 
 .gravatar {
+  float: left;
   max-width: 50px;
   border-radius: 50%;
 }
@@ -580,6 +632,7 @@ html {
   margin: 15px auto;
   text-align: center;
   .gravatar {
+    float: none;
     max-width: 100px;
     border-radius: 50%;
   }
@@ -599,6 +652,59 @@ html {
       margin-right:10px;
     }
   }
+}
+
+/* statuses */
+
+.statuses {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+    position: relative;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    word-break: break-word;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: #777777;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  form {
+    button.status-delete-btn {
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+.status_form {
+  margin-top: 20px;
 }
 
 @media (max-width: 940px) {

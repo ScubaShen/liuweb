@@ -41,7 +41,7 @@
       </div>
     </div>
   @else
-    <div class="container" style="margin-top: 10px">
+    <div class="container">
       @include('shared._messages')
     </div>
     @yield('content')

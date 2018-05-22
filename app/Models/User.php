@@ -32,7 +32,7 @@ class User extends Authenticatable  //用users表
     {
         parent::boot();
 
-        static::creating(function ($user){  //creating 用于监听模型被创建之前的事件
+        static::creating(function ($user) {  //creating 用于监听模型被创建之前的事件
             $user->activation_token = str_random(30);
         });
     }
@@ -50,6 +50,12 @@ class User extends Authenticatable  //用users表
 
     public function statuses()
     {
-        return $this->hasMany(Status::class);
+        return $this->hasMany(Status::class);  //等於getall
+    }
+
+    public function feed()
+    {
+        return $this->statuses()
+                     ->orderBy('created_at', 'desc');
     }
 }

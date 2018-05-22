@@ -25,16 +25,15 @@
 </head>
 <body>
   @include('layouts._header', ['header' => $header])
-  @include('shared._messages')
-
   @if($header == 'backstage')
     @include('layouts._sidebar')
-    <div class="panel-right" style="left: 180px;position: absolute;right: 0;background-color: #fff;top: 50px;bottom: 0;">
+    <div class="panel-right">
       @include('layouts._inner_sidebar')
-      <div class="inner-right" style="position: absolute;left: 180px;bottom: 0;top: 0;right: 0;overflow-y: scroll;-webkit-transition: 200ms all ease;-o-transition: 200ms all ease;transition: 200ms all ease;">
+      <div class="inner-right">
         <div class="col-md-offset-1 col-md-10" style="margin-top: 15px;">
           <div class="row">
             <div class="col-md-offset-2 col-md-8">
+              @include('shared._messages')
               @yield('content')
             </div>
           </div>
@@ -42,13 +41,12 @@
       </div>
     </div>
   @else
+    <div class="container" style="margin-top: 10px">
+      @include('shared._messages')
+    </div>
     @yield('content')
     @include('layouts._footer')
-    <div class="gototop">
-      <a href="#" class="js-gotop"><i class="ti-arrow-up"></i></a>
-    </div>
   @endif
-
 
 
   @section('js')

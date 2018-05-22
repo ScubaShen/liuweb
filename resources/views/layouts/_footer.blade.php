@@ -53,3 +53,7 @@
 
   </div>
 </footer>
+
+<div class="gototop">
+  <a href="#" class="js-gotop"><i class="ti-arrow-up"></i></a>
+</div>

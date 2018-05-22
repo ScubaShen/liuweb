@@ -12,6 +12,7 @@
       </div>
       <div class="collapse navbar-collapse" id="example-navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ route('statuses.show', Auth::user()->id) }}">发布话题</a></li>
           <li><a href="{{ route('users.index') }}">用户列表</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -50,6 +51,7 @@
       </div>
       <ul class="nav navbar-nav navbar-right offcanvasMenu-dis liu-underline">
         @if(Auth::check())
+          <li><a href="{{ route('statuses.show', Auth::user()->id) }}">发布话题</a></li>
           <li><a href="{{ route('users.index') }}">用户列表</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

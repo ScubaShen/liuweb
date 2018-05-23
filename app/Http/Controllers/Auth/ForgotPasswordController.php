@@ -29,4 +29,9 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+    public function showLinkRequestFormWithHeader()
+    {
+        return $this->showLinkRequestForm()->with('header', 'opaque');
+    }
 }
